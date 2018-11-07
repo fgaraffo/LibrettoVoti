@@ -1,6 +1,7 @@
 package it.polito.tdp.libretto;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Libretto {
@@ -109,6 +110,17 @@ public class Libretto {
 		}
 		return "Non presente";
 	}
-	
+
+	public void remove (int i) 
+	{
+		for (Iterator <Voto> iter = this.voti.iterator() ; iter.hasNext(); )
+		{
+		    Voto v = iter.next();
+		    if (v.getVoto()<i)
+		    {
+		        iter.remove();
+		    }
+		}
+	}
 	
 }

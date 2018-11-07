@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 // POJO: PLAIN OLD JAVA OBJECT
 
-public class Voto {
+public class Voto implements Comparable <Voto> {
 
 	private String nome;
 	private int voto;
@@ -63,7 +63,10 @@ public class Voto {
 		return true;
 	}
 	
-	
-	
-	
+	@Override
+	public int compareTo(Voto v) {
+		
+		return this.nome.compareTo(v.getNome());
+	}
+		
 }
